@@ -21,12 +21,12 @@ static void MySQLConnectorTest()
 {
 	Session sess("127.0.0.1", "game_server", "game_server_pw");
 	RowResult res = sess.sql("show variables like 'version'").execute();
-	UE_LOG(LogTemp, Log, TEXT("Server"));
+	UE_LOG(LogTemp, Warning, TEXT("Server---------------------------------------------"));
 }
 #else
 static void MySQLConnectorTest()
 {
-	UE_LOG(LogTemp, Log, TEXT("Client"));
+	UE_LOG(LogTemp, Warning, TEXT("Client---------------------------------------------"));
 }
 #endif
 

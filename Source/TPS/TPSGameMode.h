@@ -2,11 +2,13 @@
 
 #pragma once
 
+
+#include "Misc/NetworkVersion.h"
+
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "TPSGameMode.generated.h"
 
-#include "Misc/NetworkVersion.h"
 
 UCLASS(minimalapi)
 class ATPSGameMode : public AGameModeBase

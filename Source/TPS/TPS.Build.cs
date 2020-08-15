@@ -14,7 +14,9 @@ public class TPS : ModuleRules
 		if (Target.Platform == UnrealTargetPlatform.Linux)
         {
 			PublicSystemIncludePaths.Add("/usr/include/mysql-cppconn-8");
+
 			string LibPath = "/usr/lib/x86_64-linux-gnu";
+
 			// PublicSystemLibraryPaths.Add(LibPath);
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libcrypto"));
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libssl.a"));
@@ -23,6 +25,8 @@ public class TPS : ModuleRules
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libresolv.a"));
 			*/
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8-static.a"));
+
+			RuntimeDependencies.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
 		}
 	}
 }

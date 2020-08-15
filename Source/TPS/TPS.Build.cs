@@ -13,12 +13,13 @@ public class TPS : ModuleRules
 
 		if (Target.Platform == UnrealTargetPlatform.Linux)
         {
-			PublicSystemIncludePaths.Add("/usr/include/mysql-cppconn-8/");
-			PublicAdditionalLibraries.Add("crypto");
-			PublicAdditionalLibraries.Add("ssl");
-			PublicAdditionalLibraries.Add("pthread");
-			PublicAdditionalLibraries.Add("resolv");
-			PublicAdditionalLibraries.Add("mysqlcppconn8-static");
+			PublicSystemIncludePaths.Add("/usr/include/mysql-cppconn-8");
+			string LibPath = "/usr/lib/x86_64-linux-gnu";
+			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "crypto"));
+			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "ssl.a"));
+			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "pthread.a"));
+			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "resolv.a"));
+			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "mysqlcppconn8-static.a"));
 		}
 	}
 }

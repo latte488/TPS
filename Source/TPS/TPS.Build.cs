@@ -15,6 +15,7 @@ public class TPS : ModuleRules
         {
 			PublicSystemIncludePaths.Add("/usr/include/mysql-cppconn-8");
 			string LibPath = "/usr/lib/x86_64-linux-gnu";
+			PublicSystemLibraryPaths.Add(LibPath);
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "crypto"));
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "ssl.a"));
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "pthread.a"));

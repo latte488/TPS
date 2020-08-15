@@ -12,7 +12,7 @@
 //////////////////////////////////////////////////////////////////////////
 // ATPSCharacter
 
-#if UE_SERVER
+#if PLATFORM_LINUX
 #include <mysqlx/xdevapi.h>
 
 using namespace mysqlx;

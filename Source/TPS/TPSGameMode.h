@@ -6,6 +6,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "TPSGameMode.generated.h"
 
+#include "Misc/NetworkVersion.h"
+
 UCLASS(minimalapi)
 class ATPSGameMode : public AGameModeBase
 {
@@ -13,6 +15,8 @@ class ATPSGameMode : public AGameModeBase
 
 public:
 	ATPSGameMode();
+
+    static uint32 GetLocalNetworkVersion();
 };
 
 

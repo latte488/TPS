@@ -15,9 +15,10 @@ public class TPS : ModuleRules
         {
 			PublicSystemIncludePaths.Add("/usr/include/mysql-cppconn-8");
 
-			string LibPath = "/usr/lib/x86_64-linux-gnu";
+			string LibPath = Path.Combine(ModuleDirectory, "../../Binaries/Linux");
 
-			/* PublicSystemLibraryPaths.Add(LibPath);
+			PublicSystemLibraryPaths.Add(LibPath);
+			/*
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libcrypto"));
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libssl.a"));
 			
@@ -26,6 +27,7 @@ public class TPS : ModuleRules
 			
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8-static.a"));
 			*/
+			PublicSystemLibraryPaths.Add(LibPath);
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
 			RuntimeDependencies.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
 		}

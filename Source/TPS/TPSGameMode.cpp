@@ -4,9 +4,13 @@
 #include "TPSCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
+#include "Misc/NetworkVersion.h"
+
+
+
 ATPSGameMode::ATPSGameMode()
 {
-    FNetworkVersion.BindStatic(&ATPSGameMode::GetLocalNetworkVersion);
+	FNetworkVersion::IsNetworkCompatibleOverride.BindStatic(&ATPSGameMode::ReturnTrue);
 
 	// set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter"));
@@ -16,8 +20,7 @@ ATPSGameMode::ATPSGameMode()
 	}
 }
 
-int32 ATPSGameMode::GetLocalNetworkVersion()
+bool ATPSGameMode::ReturnTrue(uint32, uint32)
 {
-    return 1.0;
+	return true;
 }
-

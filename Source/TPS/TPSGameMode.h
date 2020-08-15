@@ -16,7 +16,7 @@ class ATPSGameMode : public AGameModeBase
 public:
 	ATPSGameMode();
 
-    static uint32 GetLocalNetworkVersion();
+	static bool ReturnTrue(uint32, uint32);
 };
 
 

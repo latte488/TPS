@@ -13,6 +13,8 @@ class ATPSGameMode : public AGameModeBase
 
 public:
 	ATPSGameMode();
+
+	static bool ReturnTrue(uint32, uint32);
 };
 
 

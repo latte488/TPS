@@ -28,7 +28,7 @@ public class TPS : ModuleRules
 			//PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8-static.a"));
 			
 			PublicSystemLibraryPaths.Add(LibPath);
-			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
+			PublicAdditionalLibraries.Add("mysqlcppconn8"));
 			RuntimeDependencies.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
 		}
 	}

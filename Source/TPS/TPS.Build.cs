@@ -17,15 +17,17 @@ public class TPS : ModuleRules
 
 			string LibPath = "/usr/lib/x86_64-linux-gnu";
 
-			// PublicSystemLibraryPaths.Add(LibPath);
+			/* PublicSystemLibraryPaths.Add(LibPath);
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libcrypto"));
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libssl.a"));
-			/*
+			
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libpthread.a"));
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libresolv.a"));
-			*/
+			
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8-static.a"));
-			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
+
+			RuntimeDependencies.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
+			*/
 		}
 	}
 }

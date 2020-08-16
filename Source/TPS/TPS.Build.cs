@@ -25,12 +25,12 @@ public class TPS : ModuleRules
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libresolv.a"));
 			*/
 			//PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libprotobuf.a"));
-			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libprotobuf-lite.so"));
+			//PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libprotobuf-lite.so"));
 			
-			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8-static.a"));
+			//PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8-static.a"));
 			
 			PublicSystemLibraryPaths.Add(LibPath);
-			PublicAdditionalLibraries.Add("mysqlcppconn8");
+			// PublicAdditionalLibraries.Add("mysqlcppconn8");
 			RuntimeDependencies.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
 		}
 	}

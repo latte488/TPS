@@ -20,8 +20,8 @@ public class TPS : ModuleRules
 			string LibPath = Path.Combine(ModuleDirectory, "../../Binaries/Linux");
 
 			PublicSystemLibraryPaths.Add(LibPath);
-			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libcrypto.a"));
-			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libssl.a"));
+			//PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libcrypto.a"));
+			//PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libssl.a"));
 			/*
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libpthread.a"));
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libresolv.a"));

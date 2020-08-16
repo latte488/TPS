@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-using System.IO;
 using UnrealBuildTool;
+using System.IO;
 
 public class TPS : ModuleRules
 {
@@ -16,8 +16,9 @@ public class TPS : ModuleRules
 		if (Target.Platform == UnrealTargetPlatform.Linux)
         {
 			PublicSystemIncludePaths.Add("/usr/include/mysql-cppconn-8");
-			string LibPath = Path.Combine(ModuleDirectory, "../../ThirdParty/MySQLConnector8");
-			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libmysqlcppconn8.so"));
+			string LibPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "..", "..", "ThirdParty", "MySQLConnector8", "libmysqlcppconn8.so"));
+			PublicAdditionalLibraries.Add(LibPath);
+			RuntimeDependencies.Add(LibPath);
 		}
 	}
 }

@@ -16,9 +16,17 @@ public class TPS : ModuleRules
 		if (Target.Platform == UnrealTargetPlatform.Linux)
         {
 			PublicSystemIncludePaths.Add("/usr/include/mysql-cppconn-8");
-			string LibPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "..", "..", "ThirdParty", "MySQLConnector8", "libmysqlcppconn8.so"));
-			PublicAdditionalLibraries.Add(LibPath);
-			RuntimeDependencies.Add(LibPath);
+            string BasePath = Path.GetFullPath(Path.Combine(ModuleDirectory, "..", ".."));
+			string LibPath = Path.Combine(BasePath, "ThirdParty", "MySQLConnector8");
+            string MySQLConnectorLib = Path.Combine(LibPath, "libmysqlcppconn8.so");
+            string ProtobufLib = Path.Combine(LibPath, "libprotobuf.so");
+            string ProtobufLiteLib = Path.Combine(LibPath, "libprotobuf-lite.so");
+			PublicAdditionalLibraries.Add(MySQLConnectorLib);
+			PublicAdditionalLibraries.Add(ProtobufLib);
+			PublicAdditionalLibraries.Add(ProtobufLiteLib);
+			RuntimeDependencies.Add(MySQLConnectorLib);
+			RuntimeDependencies.Add(ProtobufLib);
+			RuntimeDependencies.Add(ProtobufLiteLib);
 		}
 	}
 }

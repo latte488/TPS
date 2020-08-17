@@ -19,14 +19,8 @@ public class TPS : ModuleRules
             string BasePath = Path.GetFullPath(Path.Combine(ModuleDirectory, "..", ".."));
 			string LibPath = Path.Combine(BasePath, "ThirdParty", "MySQLConnector8");
             string MySQLConnectorLib = Path.Combine(LibPath, "libmysqlcppconn8.so");
-            string ProtobufLib = Path.Combine(LibPath, "libprotobuf.so");
-            string ProtobufLiteLib = Path.Combine(LibPath, "libprotobuf-lite.so");
 			PublicAdditionalLibraries.Add(MySQLConnectorLib);
-			PublicAdditionalLibraries.Add(ProtobufLib);
-			PublicAdditionalLibraries.Add(ProtobufLiteLib);
 			RuntimeDependencies.Add(MySQLConnectorLib);
-			RuntimeDependencies.Add(ProtobufLib);
-			RuntimeDependencies.Add(ProtobufLiteLib);
 		}
 	}
 }

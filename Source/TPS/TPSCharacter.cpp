@@ -13,20 +13,17 @@
 // ATPSCharacter
 
 #if PLATFORM_LINUX
-#include <mysqlx/xdevapi.h>
-
-using namespace mysqlx;
+#include <MySQLConnector.h>
 
 static void MySQLConnectorTest()
 {
-	Session sess("127.0.0.1", "game_server", "game_server_pw");
-	RowResult res = sess.sql("show variables like 'version'").execute();
-	UE_LOG(LogTemp, Warning, TEXT("Server---------------------------------------------"));
+	MySQLConnector::Session Sess("127.0.0.1", "game_server", "game_server_pw");
+	UE_LOG(LogTemp, Log, TEXT("Server : %d"), Sess.NumConnections());
 }
 #else
 static void MySQLConnectorTest()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Client---------------------------------------------"));
+	UE_LOG(LogTemp, Log, TEXT("Client"));
 }
 #endif
 

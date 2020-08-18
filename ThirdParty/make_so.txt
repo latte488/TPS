@@ -1,0 +1,1 @@
+g++ -g -Iinclude -I/usr/include/mysql-cppconn-8/ -shared -fPIC -o libmysqlconnector.so MySQLConnector.cpp -Wl,-Bdynamic,-lpthread,-lresolv,-Bstatic,-lmysqlcppconn8-static

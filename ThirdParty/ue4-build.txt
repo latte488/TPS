@@ -1,0 +1,1 @@
+~/projects/UnrealEngine/Engine/Build/BatchFiles/RunUAT.sh BuildCookRun -project=../../TPS/TPS.uproject -server -build

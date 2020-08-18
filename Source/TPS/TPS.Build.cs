@@ -7,7 +7,7 @@ public class TPS : ModuleRules
 {
 	public TPS(ReadOnlyTargetRules Target) : base(Target)
 	{
-		bEnableExceptions = true;
+        bEnableExceptions = true;
 
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
@@ -15,12 +15,13 @@ public class TPS : ModuleRules
 
 		if (Target.Platform == UnrealTargetPlatform.Linux)
         {
-			PublicSystemIncludePaths.Add("/usr/include/mysql-cppconn-8");
             string BasePath = Path.GetFullPath(Path.Combine(ModuleDirectory, "..", ".."));
-			string LibPath = Path.Combine(BasePath, "ThirdParty", "MySQLConnector8");
-            string MySQLConnectorLib = Path.Combine(LibPath, "libmysqlcppconn8.so");
-			PublicAdditionalLibraries.Add(MySQLConnectorLib);
-			RuntimeDependencies.Add(MySQLConnectorLib);
-		}
+			string MySQLConnectorPath = Path.Combine(BasePath, "ThirdParty", "MySQLConnector");
+            string IncludePath = Path.Combine(MySQLConnectorPath, "include");
+            string LibPath = Path.Combine(MySQLConnectorPath, "libmysqlconnector.so");
+			PublicSystemIncludePaths.Add(IncludePath);
+            PublicAdditionalLibraries.Add(LibPath);
+            RuntimeDependencies.Add(LibPath);
+        }
 	}
 }
